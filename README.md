@@ -5,6 +5,14 @@
 
 https://devops-for-developers-project-76.apriakhin.com
 
+## Requirements
+
+- Python
+- PIP
+- Ansible
+- Make
+- Git
+
 ## Getting Started
 
 ### Сheck the availability of servers
