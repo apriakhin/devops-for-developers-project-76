@@ -4,5 +4,8 @@ ping:
 install:
 	ansible-galaxy install -r requirements.yml
 
-deploy:
+setup:
 	ansible-playbook playbook.yml -i inventory.ini
+
+deploy:
+	ansible-playbook playbook.yml -i inventory.ini --tags deploy

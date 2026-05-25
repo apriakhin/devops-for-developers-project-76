@@ -1,6 +1,10 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/apriakhin/devops-for-developers-project-76/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/apriakhin/devops-for-developers-project-76/actions)
 
+## URL
+
+https://devops-for-developers-project-76.apriakhin.com
+
 ## Getting Started
 
 ### Сheck the availability of servers
@@ -13,6 +17,12 @@ make ping
 
 ```bash
 make install
+```
+
+### Setup the roles
+
+```bash
+make setup
 ```
 
 ### Run the deployment

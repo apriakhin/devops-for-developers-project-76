@@ -7,3 +7,24 @@
   roles:
     - geerlingguy.pip
     - geerlingguy.docker
+
+  tasks:
+    - name: Create Redmine env file
+      ansible.builtin.template:
+        src: templates/redmine.env.j2
+        dest: /tmp/redmine.env
+        mode: '0644'
+      tags:
+        - deploy
+
+    - name: Run Redmine container
+      community.docker.docker_container:
+        name: redmine
+        image: redmine:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "{{ redmine_port }}:{{ redmine_port }}"
+        env_file: /tmp/redmine.env
+      tags:
+        - deploy
