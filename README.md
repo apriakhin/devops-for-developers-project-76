@@ -19,7 +19,7 @@ make ping
 make install
 ```
 
-### Setup the roles
+### Setup the environment
 
 ```bash
 make setup
@@ -29,4 +29,10 @@ make setup
 
 ```bash
 make deploy
+```
+
+### Setup the monitoring
+
+```bash
+make monitoring
 ```

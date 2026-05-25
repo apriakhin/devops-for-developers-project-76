@@ -1,12 +1,21 @@
-- hosts: all
-
-  vars:
-    pip_install_packages:
-      - name: docker
-
+- hosts: webservers
+  become: true
   roles:
-    - geerlingguy.pip
-    - geerlingguy.docker
+    - role: geerlingguy.pip
+      tags: setup
+
+    - role: geerlingguy.docker
+      tags: setup
+
+    - role: datadog.dd.agent
+      tags: monitoring
+
+  pre_tasks:
+    - name: Perform full system upgrade
+      ansible.builtin.apt:
+        upgrade: dist
+        update_cache: true
+      tags: setup
 
   tasks:
     - name: Create Redmine env file

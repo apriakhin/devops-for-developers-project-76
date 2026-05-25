@@ -1,3 +1,6 @@
+pip_install_packages:
+  - name: docker
+
 redmine_port: 3000
 
 db_username: doadmin
@@ -5,3 +8,13 @@ db_password: "{{ vault_db_password }}"
 db_host: private-db-postgresql-nyc1-08043-do-user-37767681-0.d.db.ondigitalocean.com
 db_port: 25060
 db_database: defaultdb
+
+datadog_api_key: "{{ vault_datadog_api_key }}"
+datadog_site: datadoghq.com
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: redmine
+        url: https://devops-for-developers-project-76.apriakhin.com
+        timeout: 5
