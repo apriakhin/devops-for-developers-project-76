@@ -1,0 +1,7 @@
+redmine_port: 3000
+
+db_username: doadmin
+db_password: "{{ vault_db_password }}"
+db_host: private-db-postgresql-nyc1-08043-do-user-37767681-0.d.db.ondigitalocean.com
+db_port: 25060
+db_database: defaultdb
